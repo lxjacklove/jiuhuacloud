@@ -19,15 +19,15 @@ eureka:
     #设置为true才能配合ribbon使用负载均衡
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka  #单个节点服务版
-      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
+      #defaultZone: http://localhost:7001/eureka  #单个节点服务版
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
   instance:
     instance-id: payment8001  #修改主机名称
     prefer-ip-address: true #访问路径可以显示ip地址
     #eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认30秒）
-    lease-renewal-interval-in-seconds: 1
+    #lease-renewal-interval-in-seconds: 1
     #eureka服务端在收到最后一次心跳后等待时间上限，单位为秒（默认90秒）
-    lease-expiration-duration-in-seconds: 2
+    #lease-expiration-duration-in-seconds: 2
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.atjiuhua.springcloud.entities  #所有Entity别名类所在包
